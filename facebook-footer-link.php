@@ -15,12 +15,7 @@ if ( ! defined('ABSPATH')){
 // Global Options Variable
 $ffl_options = get_option('ffl_settings');
 
-if (array_key_exists('enable', $ffl_options) == false) {
-    $ffl_options['enable'] = 0;
-}
-if (array_key_exists('show_in_feed', $ffl_options) == false) {
-    $ffl_options['show_in_feed'] = 0;
-}
+
 
 // Load Scripts
 require_once(plugin_dir_path(__FILE__).'/includes/facebook-footer-link-scripts.php');

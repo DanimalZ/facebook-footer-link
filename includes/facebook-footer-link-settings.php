@@ -16,7 +16,12 @@ function ffl_options_content(){
 
     // Init Options Global
     global $ffl_options;
-
+    if (array_key_exists('enable', $ffl_options) == false) {
+    $ffl_options['enable'] = 0;
+}
+if (array_key_exists('show_in_feed', $ffl_options) == false) {
+    $ffl_options['show_in_feed'] = 0;
+}
 
     ob_start(); ?>
         <div class="wrap">
@@ -52,8 +57,7 @@ function ffl_options_content(){
         </div>
     <?php
     echo ob_get_clean();
-    //$ffl_options['enable'] = (isset($_GET['enable']) ? $_GET['enable'] : null);
-    //$ffl_options['show_in_feed'] = (isset($_GET['show_in_feed']) ? $_GET['show_in_feed'] : null);
+
     echo '<pre>'; print_r($ffl_options); echo '</pre>';
 }
 
